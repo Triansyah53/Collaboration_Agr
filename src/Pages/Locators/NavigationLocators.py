@@ -2,12 +2,11 @@ from selenium.webdriver.common.by import By
 
 
 class NavigationLocators:
-    DOCSTORE_L = (By.CSS_SELECTOR, 'input[type="text"][aria-autocomplete="list"]')
+    DOCSTORE_L = (By.CLASS_NAME, 'css-1uccc91-singleValue')
+    DOCSTORE_FIELD_L = (By.CSS_SELECTOR, 'input[type="text"][aria-autocomplete="list"]')
     MENU_ADMINISTRATON_L = (By.CLASS_NAME, 'nav-link.nav-dropdown-toggle')
     SUBMENU_PROGRAM_L=(By.CSS_SELECTOR, 'a[href*="programmanagement"]')
-    ADD_PROGRAM_BUTTON_L=(By.CSS_SELECTOR, 'button.btn-primary i.fa-plus')
-    PROGRAM_NAME_FIELD_L=(By.NAME, 'name')
-    PROGRAM_DESC_FIELD_L=(By.NAME, 'description')
+
 
     # # dropdown & IDR
     # dropdown = driver.find_element(By.XPATH, '//div[contains(text(), "Type to Select")]').click()

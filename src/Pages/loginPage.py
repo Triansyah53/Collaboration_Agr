@@ -1,3 +1,5 @@
+import pdb
+
 from Collaboration_Agr.src.Pages.Locators.loginLocators import loginLocator
 from Collaboration_Agr.src.SeleniumExtended import SeleniumExtended
 from Collaboration_Agr.src.helpers.config_helper import get_base_url
@@ -17,7 +19,6 @@ class loginPage(loginLocator):
         self.sl.wait_and_input_text(self.USERNAME_FIELD_L,self.USERNAME)
         self.sl.wait_and_input_text(self.PASSWORD_FIELD_L,self.PASSWORD)
         self.sl.wait_and_click(self.LOGIN_BUTTON_L)
-
 
     def is_login_succesfull(self):
         self.sl.wait_until_element_contains_text(self.LOGIN_ASSERT_L, 'Dashboard')
