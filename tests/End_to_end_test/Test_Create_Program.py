@@ -1,8 +1,10 @@
 import pdb
+import time
 
 from Collaboration_Agr.src.Pages.NavigationPage import NavigationPage
 from Collaboration_Agr.src.Pages.loginPage import loginPage
 from Collaboration_Agr.src.Pages.ProgramPage import ProgramPage
+
 
 import pytest
 
@@ -21,3 +23,6 @@ class TestCreateProgram():
         navigation_p.choose_docstore()
         navigation_p.go_to_program_menu()
         program_p.add_program()
+        program_p.program_detail()
+        program_p.choose_currencies()
+        time.sleep(10)

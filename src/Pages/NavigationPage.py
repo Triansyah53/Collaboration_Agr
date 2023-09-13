@@ -1,8 +1,7 @@
 import pdb
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+import time
+
 from Collaboration_Agr.src.SeleniumExtended import SeleniumExtended
-from Collaboration_Agr.src.helpers.config_helper import get_base_url
 from Collaboration_Agr.src.Pages.Locators.NavigationLocators import NavigationLocators
 from selenium.webdriver.common.keys import Keys
 class NavigationPage(NavigationLocators):
@@ -13,7 +12,9 @@ class NavigationPage(NavigationLocators):
     def choose_docstore(self):
         self.sl.wait_and_click(self.DOCSTORE_L)
         self.sl.wait_and_input_text(self.DOCSTORE_FIELD_L, "DUMMY BUYER")
+        time.sleep(1)
         self.driver.find_element(*self.DOCSTORE_FIELD_L).send_keys(Keys.ENTER)
+        time.sleep(1)
 
     def go_to_program_menu(self):
         self.sl.wait_and_click(self.MENU_ADMINISTRATON_L)
