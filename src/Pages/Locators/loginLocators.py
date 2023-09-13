@@ -7,5 +7,5 @@ class loginLocator:
     LOGIN_BUTTON_L=(By.ID,'loginButton')
     LOGIN_ASSERT_L=(By.CLASS_NAME,'breadcrumb-item')
 
-    USERNAME='asyxsupport'
-    PASSWORD='Asyx!4362023'
+    USERNAME=''
+    PASSWORD=''
