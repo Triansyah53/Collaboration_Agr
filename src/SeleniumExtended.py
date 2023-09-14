@@ -21,9 +21,32 @@ class SeleniumExtended:
         timeout = timeout if timeout else self.default_timeout
         WebDriverWait(self.driver, timeout).until(EC.text_to_be_present_in_element(locator, text))
 
+    def wait_until_text_visible(self,locator,text,timeout=None):
+        timeout = timeout if timeout else self.default_timeout
+        WebDriverWait(self.driver,timeout).until(EC.text_to_be_present_in_element(locator,text))
     def send_enter_key(self, *locator):
         element = self.driver.find_element(*locator)
         element.send_keys(Keys.ENTER)
+
+    def wait_and_get_text(self, locator, timeout=None):
+        timeout = timeout if timeout else self.default_timeout
+        elm = WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_element_located(locator)
+        )
+        element_text = elm.text
+        return element_text
+
+    def is_element_visible(self, locator):
+        try:
+            element = WebDriverWait(self.driver, self.default_timeout).until(
+                EC.visibility_of_element_located(locator)
+            )
+            if element.is_displayed():
+                return element.text
+            else:
+                return None
+        except TimeoutException:
+            return None
 
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC

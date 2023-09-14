@@ -16,13 +16,18 @@ class TestCreateProgram():
         navigation_p = NavigationPage(self.driver)
         program_p= ProgramPage(self.driver)
 
-
         login.go_to_login_page()
         login.login()
         login.is_login_succesfull()
+
         navigation_p.choose_docstore()
         navigation_p.go_to_program_menu()
+
         program_p.add_program()
         program_p.program_detail()
         program_p.choose_currencies()
+        program_p.choose_multiple_seller()
+        program_p.choose_program_type()
+        program_p.fc_full_settings()
+
         time.sleep(10)
