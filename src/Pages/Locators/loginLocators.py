@@ -8,6 +8,6 @@ class loginLocator:
     LOGIN_ASSERT_L = (By.CLASS_NAME, 'breadcrumb-item')
     LOGIN_FAIL_MESSAGE_L = (By.XPATH, ('//span[text()="Failed to connect to the server, please try again."]'))
 
-    USERNAME = ''
-    PASSWORD = ''
+    USERNAME = 'asyxsupport'
+    PASSWORD = 'Asyx!4362023'
 

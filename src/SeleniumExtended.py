@@ -28,6 +28,10 @@ class SeleniumExtended:
         element = self.driver.find_element(*locator)
         element.send_keys(Keys.ENTER)
 
+    def wait_until_element_located(self,*locator,timeout=None):
+        timeout = timeout if timeout else self.default_timeout
+        WebDriverWait(self.driver,timeout).until(EC.presence_of_element_located(locator))
+
     def wait_and_get_text(self, locator, timeout=None):
         timeout = timeout if timeout else self.default_timeout
         elm = WebDriverWait(self.driver, timeout).until(
