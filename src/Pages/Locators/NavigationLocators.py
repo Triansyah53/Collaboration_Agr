@@ -6,7 +6,7 @@ class NavigationLocators:
     DOCSTORE_FIELD_L = (By.CSS_SELECTOR, 'input[type="text"][aria-autocomplete="list"]')
     MENU_ADMINISTRATON_L = (By.CLASS_NAME, 'nav-link.nav-dropdown-toggle')
     SUBMENU_PROGRAM_L=(By.CSS_SELECTOR, 'a[href*="programmanagement"]')
-
+    CHECK_DOCSTORE_L=(By.CSS_SELECTOR,'header > div > div > div > div.css-1hwfws3 > div.css-1uccc91-singleValue')
 
 
 
