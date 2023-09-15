@@ -1,8 +1,5 @@
-import pdb
-import time
 
 from selenium.webdriver import Keys
-from selenium.webdriver.common.by import By
 from Collaboration_Agr.src.SeleniumExtended import SeleniumExtended
 from Collaboration_Agr.src.Pages.Locators.ProgramLocators import ProgramLocators
 from Collaboration_Agr.src.helpers.generic_helper import generate_program_data
@@ -88,8 +85,10 @@ class ProgramPage(ProgramLocators):
     def save_program(self):
         self.sl.wait_and_click(self.SAVE_PROGRAM_BUTTON_L)
 
-    # def is_program_created(self):
-    #     text=self.sl.wait_and_get_text(self.IS_PROGRAM_CREATED_L)
+    def is_program_created(self):
+        text=self.sl.wait_and_get_text(self.IS_PROGRAM_CREATED_L)
+        assert 'automation' in text.lower(),f"Expected '{text}' in the Program Name"
+
 
     def fc_full_settings(self):
         self.fc_quote_settings()
@@ -99,6 +98,6 @@ class ProgramPage(ProgramLocators):
         self.fc_invoice()
         self.collab_cl()
         self.save_program()
-        # self.is_program_created()
+        self.is_program_created()
 
 
