@@ -20,6 +20,9 @@ class NavigationPage(NavigationLocators):
         self.sl.wait_and_click(self.MENU_ADMINISTRATON_L)
         self.sl.wait_and_click(self.SUBMENU_PROGRAM_L)
 
+    def is_docstore_correct(self):
+        text=self.sl.wait_and_get_text(self.DOCSTORE_L)
+        assert 'DUMMY BUYER' in text
 
 
 

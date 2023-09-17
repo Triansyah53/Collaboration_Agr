@@ -21,6 +21,7 @@ class TestCreateProgram():
         login.is_login_succesfull()
 
         navigation_p.choose_docstore()
+        navigation_p.is_docstore_correct()
         navigation_p.go_to_program_menu()
 
         program_p.add_program()

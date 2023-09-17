@@ -1,7 +1,7 @@
 import os
 
 def get_base_url():
-    env = os.environ.get('ENV', 'staging')
+    env = os.environ.get('ENV', 'prod')
     if env.lower() == 'staging':
         return 'https://s8.asyx.com'
     elif env.lower() == 'prod':

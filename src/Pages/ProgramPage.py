@@ -43,6 +43,7 @@ class ProgramPage(ProgramLocators):
         self.driver.find_element(*self.QS_LOGO_FIELD_L).send_keys(Keys.ENTER)
 
     def fc_order_settings(self):
+        self.driver.execute_script("window.scrollTo(0, 0);")
         self.sl.wait_and_click(self.OS)
         self.sl.wait_and_click(self.OS_ENABLED_L)
         self.sl.wait_and_click(self.OS_LITIGATION_L)
@@ -51,6 +52,7 @@ class ProgramPage(ProgramLocators):
         self.driver.find_element(*self.OS_LOGO_FIELD_L).send_keys(Keys.ENTER)
 
     def fc_despatch_advice_settings(self):
+        self.driver.execute_script("window.scrollTo(0, 0);")
         self.sl.wait_and_click(self.DA)
         self.sl.wait_and_click(self.DA_PARTIAL_L)
         self.sl.wait_and_click(self.DA_DGOODS_CONFIRMATION_L)
@@ -65,12 +67,14 @@ class ProgramPage(ProgramLocators):
         self.driver.find_element(*self.DA_LOGO_FIELD_L).send_keys(Keys.ENTER)
 
     def fc_receive_advice(self):
+        self.driver.execute_script("window.scrollTo(0, 0);")
         self.sl.wait_and_click(self.RA)
         self.sl.wait_and_click(self.RA_LOGO_DROPDOWN_L)
         self.sl.wait_and_input_text(self.RA_LOGO_FIELD_L,'buyer')
         self.driver.find_element(*self.RA_LOGO_FIELD_L).send_keys(Keys.ENTER)
 
     def fc_invoice(self):
+        self.driver.execute_script("window.scrollTo(0, 0);")
         self.sl.wait_and_click(self.INV)
         self.sl.wait_and_click(self.INV_SIGNATURES_L)
         self.sl.wait_and_click(self.INV_ADD_SIGNATURES_L)
